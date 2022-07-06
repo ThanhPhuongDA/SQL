@@ -1,4 +1,4 @@
----- Create database BLab2
+---- Create database DBLab2
 CREATE DATABASE DBLab2;
 USE DBLab2
 GO;
