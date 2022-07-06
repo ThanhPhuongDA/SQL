@@ -1,3 +1,4 @@
+---- Create database BLab2
 CREATE DATABASE DBLab2;
 USE DBLab2
 GO;
@@ -15,6 +16,8 @@ RN INT NOT NULL FOREIGN KEY REFERENCES Student(RN),
 TestID INT NOT NULL FOREIGN KEY REFERENCES Test(TestID),
 Date DATE,
 Mark FLOAT);
+
+--- Insert values into the tables just created above
 
 INSERT INTO Student(Name, Age)
 VALUES
