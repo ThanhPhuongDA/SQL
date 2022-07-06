@@ -1,5 +1,9 @@
+---- Create database DBLab1
 CREATE DATABASE DBLab1;
-USE DBLab1;
+USE DBLab1
+GO;
+
+--- Create tables: Students, Classes, ClassStudent, Subjects
 CREATE TABLE Students(
 StudentID int NOT NULL PRIMARY KEY IDENTITY (1, 1),
 StudentName NVARCHAR(50),
@@ -27,7 +31,7 @@ Mark int,
 SubjectID int,
 StudentID int);
 
-
+---- Insert values into the tables just created before
 INSERT INTO Students(StudentName,Age,Email)
 VALUES
 ('Nguyen Quang An',18,'an@yahoo.com'),
@@ -70,8 +74,7 @@ VALUES
 
 ALTER TABLE Students ADD CHECK(Age between 15 and 50);
 ALTER TABLE Students ADD Status bit NOT NULL Default(1);
-SELECT * FROM Marks;
-
+---- Add Foreign Keys to connect tables together to create database schema
 ALTER TABLE Marks ADD FOREIGN KEY(StudentID) REFERENCES Students(StudentID);
 ALTER TABLE Marks ADD FOREIGN KEY(SubjectID) REFERENCES Subjects(SubjectID);
 
